@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 ._.DS_Store
 .DS_Store
+
+paper_figures_v*/*
