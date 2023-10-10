@@ -136,8 +136,8 @@ figs[1].savefig("paper_figures_v5/selection_nov.pdf")
 reload(sf)
 df_numsol = sf.number_of_solutions(df_selection)
 sf.plot_number_of_solutions(df_numsol)
-plt.savefig("paper_figures_v2/number_of_solutions.svg")
-plt.savefig("paper_figures_v2/number_of_solutions.pdf")
+plt.savefig("paper_figures_v5/number_of_solutions.svg")
+plt.savefig("paper_figures_v5/number_of_solutions.pdf")
 
 
 # %% PCA solution selection figure (Fig. 3 G-I)
@@ -1031,7 +1031,7 @@ plot_artificial_response("H")
 
 # if the data are not generated, genetrate them.
 if not os.path.exists("figure_data/peaks_all_artificial_mean_res2.pkl"):
-    peaks_all_art2 = df_sel.parallel_apply(
+    peaks_all_art2 = df_sel.apply(
         solution_to_peak_curves,
         axis=1,
         mean_res=True,
