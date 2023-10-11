@@ -17,11 +17,12 @@ import os
 
 
 # %% Load necessary data and do a bit of computations
-df_fig_gen4 = pd.read_feather("figure_data/df_gen4.feather")
+# df_fig_gen4 = pd.read_feather("figure_data/df_gen4.feather")
+df_fig_gen4 = pd.read_feather("figure_data/df_gen4_used_subset.feather")
 
 scaler = StandardScaler()
 orig_data = df_fig_gen4.loc[df_fig_gen4["cost_pass_loose"]].loc[
-    :, sf.sim_params_adj_nopv
+    :, sf.sim_params_fin_nopv
 ]
 scaled_data = scaler.fit_transform(orig_data)
 pca = PCA(n_components=3)
@@ -692,7 +693,7 @@ plt.savefig("paper_figures_v5/lda_coef_gp.pdf")
 
 
 # %% Target data manipulation results: 2D LDA Projection (Fig. 6E)
-df_fig_gen5 = pd.read_feather("figure_data/df_gen5.feather")
+df_fig_gen5 = pd.read_feather("figure_data/df_gen5_used_subset.feather")
 
 # drop if data_type is Unused
 df_fig_gen5 = df_fig_gen5[df_fig_gen5["data_type"] != "Unused"].copy()
