@@ -150,7 +150,7 @@ def plot_cell_type_activity(df_merged, params):
                 r = ssn.sim_to_result_orig(pre_stim, **fitp)
                 ssn.plot_results_one(
                     r["output"],
-                    data_array[sessiontype],
+                    df_merged[sessiontype],
                     r["stims"],
                     ssn.time_index,
                     type=celltype[1],
