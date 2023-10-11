@@ -26,6 +26,8 @@ print(params)
 # Run the simulation with these parameters.
 # the result is (len(stimulus), 4) array, representing 4 cell types.
 result = ssn.sim_to_result_orig(stimulus, **params)
+# if you want to benchmark
+# %timeit ssn.sim_to_result_orig(stimulus, **params)
 
 # plot the results of the activity
 t_index = range(0, len(stimulus) * 2)

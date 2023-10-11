@@ -114,7 +114,8 @@ def simulate(state, ext_inputs, *args):
     # state is initial state
     # ext_inputs is profile of external inputs. (n_step, 4) matrix
     n_steps = ext_inputs.shape[0]
-    results = np.zeros((n_steps, 4))
+    n_pops = len(state)
+    results = np.zeros((n_steps, n_pops))
     for t in range(n_steps):
         state = step(state, ext_inputs[t, :], *args)
         results[t, :] = state
