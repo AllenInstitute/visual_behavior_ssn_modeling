@@ -75,7 +75,7 @@ def relu(array):
 @njit(parallel=False)
 def step(state, ext_input, mat, scale, exponents, decay_constants, dt):
     """Execute One step of the SSN model"""
-    input = relu(np.dot(mat, state) * scale + ext_input * dt * 1000) ** exponents
+    input = relu(np.dot(mat, state) * scale + ext_input) ** exponents
     dr = (-state + input) / decay_constants * dt
     # dx = (np.matmul(mat, state) * scale + ext_input) * dt
     # print(dx)
