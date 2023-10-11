@@ -268,7 +268,6 @@ def make_datadriven_stimulation(
     stim[:, 2] = input_s
     stim[:, 3] = input_v
 
-    # TODO: write this right
     stim[:, 0] += stimdata_appended * stim_infl[0] * stim_e
     stim[:, 1] += stimdata_appended * stim_infl[1] * stim_p
     stim[:, 2] += stimdata_appended * stim_infl[2] * stim_s
