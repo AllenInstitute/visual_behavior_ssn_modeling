@@ -11,6 +11,14 @@ The data necessary for figure reproduction is included, and one should be able t
 
 Written in requirements.txt.
 
+## Figure reproduction
+
+This repository contains all the necessary data for reproducing the figures. The analysis is also largely done in the figure generation script, paper_figures_v5.py. For most, this file will be sufficient to understand what were done for the analysis. Other scripts are used to generate these data. The steps to generate the final data are detailed in the last section (Generating data files).
+
+## Running simulation
+
+model_run_demo.py script is a demo of running the model with a single set of parameters. This will be instructive to reuse the code for running the model.
+
 ## Generating data files
 
 ### SSN_cluster_fit_*.py

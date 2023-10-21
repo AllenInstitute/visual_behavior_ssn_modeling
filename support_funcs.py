@@ -768,7 +768,7 @@ def data_selection_figure(
     figs = []
     axss = []
     for group, subdf in p10df.groupby("session"):
-        fig, axs = plt.subplots(4, 2, figsize=(8, 6))
+        fig, axs = plt.subplots(4, 2, figsize=(8.3, 6))
         if fraction is None:
             stim = ssn.load_predefined_stimulus(group)
         else:
@@ -789,6 +789,8 @@ def data_selection_figure(
             # remove right and top spines
             nobox(axs[i, 0])
             nobox(axs[i, 1])
+            axs[i, 0].set_ylabel("Number of\nsolutions")
+            axs[i, 1].set_ylabel("FR (Hz)")
 
             for j, cost in enumerate(costs):
                 if method == "normal":
